@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "dsfr": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["dsfr-mcp"]
+    }
+  }
+}
