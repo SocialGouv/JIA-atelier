@@ -32,7 +32,7 @@ Viser petit et faisable :
 - **100 % côté client** : pas d'API, pas de base de données, pas de Matomo réel.
 - Logique du simulateur d'éligibilité **côté client** (JS).
 - Capture email = formulaire front (l'envoi réel n'est pas nécessaire pour la démo).
-- Tickets : **quelques-uns, pas d'épics**, ordonnés et priorisés (le socle d'abord, la mesure en dernier).
+- Tickets : **quelques-uns, pas d'épics**, ordonnés et priorisés — **la landing page en premier** : on ne traitera pas toutes les issues pendant la démo, il faut un résultat visible rapidement (la mesure en dernier).
 - Tests : un **E2E léger** du parcours simulateur suffit.
 - **Accessibilité RGAA** et **DSFR** non négociables.
 
