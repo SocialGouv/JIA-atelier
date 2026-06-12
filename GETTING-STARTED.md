@@ -14,6 +14,7 @@ Checklist du poste de la personne qui opère Claude Code (la « GO »), à faire
 ## GitHub & outillage
 
 - [ ] **Forker** le repo (le repo source doit être public) puis cloner **ton fork** — un board GitHub Projects est lié au compte, pas au repo : chacun opère sur le sien.
+- [ ] Dans le clone, **pointer `gh` sur le fork** : `gh repo set-default <ton-handle>/JIA-atelier` — sinon les PR partent sur le repo source.
 - [ ] **Activer les Issues** sur le fork (désactivées par défaut) : `gh repo edit <ton-handle>/JIA-atelier --enable-issues`.
 - [ ] `gh` authentifié avec le scope **`project`** : `gh auth refresh -s project`.
 - [ ] Créer un **board GitHub Projects** vide, nom unique (ex. `Canicule — <ton-handle>`).
