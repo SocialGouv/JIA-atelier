@@ -17,6 +17,7 @@ C'est une **démo de bout en bout qui tient en 2h max**, holistique : chaque ét
 ## Comment travailler
 
 - **Va droit au but.** Pas de plan préalable, pas de « laisse-moi d'abord faire un plan » : produis directement l'artefact demandé. Une tâche déjà spécifiée (un ticket) s'exécute sans la re-planifier.
+- **La spec d'abord, vite.** `SPEC.md` est le seul point de synchronisation de la démo : le groupe l'attend pour lancer la maquette sur Claude Design. Livre-la en premier, concise, et annonce-la dès qu'elle est prête.
 - **Parallélise.** Le format 2h ne tient que si tout ce qui peut avancer en même temps avance en même temps : sous-agents, étapes indépendantes — par ex. créer et poster les tickets pendant que la maquette se fait sur Claude Design. N'attends jamais une étape humaine (maquette, validation) pour avancer sur le reste.
 - **Ne bloque pas sur des questions de friction.** Prends des décisions raisonnables, **documente brièvement tes hypothèses**, et ne pose que les questions qui changent vraiment l'orientation produit ou technique.
 - **Sorties lisibles**, structurées, en **français**. On doit pouvoir suivre ton raisonnement.
