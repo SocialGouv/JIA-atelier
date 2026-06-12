@@ -32,3 +32,12 @@ Objectif : **zéro friction le jour J** — tout ce qui peut être préparé ou 
 ## Retex
 
 Après chaque répétition : noter ici les pièges et optimisations de la démo, et dans `CLAUDE.md` ce qui doit changer le comportement de Claude.
+
+Répétition du 12 juin 2026 (boucle complète sur fork) :
+
+- **Chaîne autonome bouclée en ~30 min** (spec en 3 min, 7 tickets sur board, landing testée navigateur, PR, changelog) → le mode « démo guidée » (arrêt + go à chaque étape du fil rouge) tient très largement dans les 2h. Kickoff et CLAUDE.md mis à jour en conséquence.
+- **`gh repo set-default` indispensable** : sans lui, issues/PR partent sur le repo source. Confirmé en conditions réelles (repo source resté propre).
+- Sans consigne explicite, Claude **traite plus que le premier ticket** (la PR embarquait #1 à #5) et **ne déplace pas les statuts du board** → consignes « un ticket = une PR » et « In Progress/Done » ajoutées au CLAUDE.md.
+- **Tests navigateur × DSFR** : les `fr-label` interceptent les clics sur les inputs masqués (≈ 2 min de retries Playwright) → consigne « cliquer les labels » ajoutée au CLAUDE.md.
+- **Maquette Claude Design = export React** (`.jsx` + CSS approximatif) : référence visuelle, à ne pas importer — bien géré par la session grâce au « sans React » du CLAUDE.md ; rappel ajouté au README.
+- Préchauffage npx et device flow `gh auth refresh -s project` : fluides, rien à changer.

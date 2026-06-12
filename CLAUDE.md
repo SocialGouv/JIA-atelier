@@ -18,7 +18,7 @@ C'est une **démo de bout en bout qui tient en 2h max**, holistique : chaque ét
 
 - **Va droit au but.** Pas de plan préalable, pas de « laisse-moi d'abord faire un plan » : produis directement l'artefact demandé. Une tâche déjà spécifiée (un ticket) s'exécute sans la re-planifier.
 - **La spec d'abord, vite.** `SPEC.md` est le seul point de synchronisation de la démo : le groupe l'attend pour lancer la maquette sur Claude Design. Livre-la en premier, concise, et annonce-la dès qu'elle est prête.
-- **Parallélise.** Le format 2h ne tient que si tout ce qui peut avancer en même temps avance en même temps : sous-agents, étapes indépendantes — par ex. créer et poster les tickets pendant que la maquette se fait sur Claude Design. N'attends jamais une étape humaine (maquette, validation) pour avancer sur le reste.
+- **Prépare en avance, publie sur validation (démo guidée).** La préparation ne s'arrête jamais : sous-agents, étapes indépendantes, tout ce qui peut avancer en tâche de fond avance — par ex. préparer les tickets pendant que la maquette se fait sur Claude Design. Mais chaque étape du fil rouge marque un **arrêt** : présente le résultat en quelques lignes et attends le « go » avant toute **action visible** (post des tickets, ouverture de PR) et avant d'enchaîner.
 - **Ne bloque pas sur des questions de friction.** Prends des décisions raisonnables, **documente brièvement tes hypothèses**, et ne pose que les questions qui changent vraiment l'orientation produit ou technique.
 - **Sorties lisibles**, structurées, en **français**. On doit pouvoir suivre ton raisonnement.
 
@@ -60,8 +60,9 @@ Viser petit et faisable :
 - **100 % côté client** : pas d'API, pas de base de données, pas de Matomo réel.
 - Logique interactive **côté client** (JS) — ex. l'auto-diagnostic de vulnérabilité.
 - Capture email = formulaire front (l'envoi réel n'est pas nécessaire pour la démo).
-- Tickets : **quelques-uns, pas d'épics**, ordonnés et priorisés — **la landing page en premier** : on ne traitera pas toutes les issues pendant la démo, il faut un résultat visible rapidement (la mesure en dernier).
-- Tests : un **E2E léger** du parcours principal suffit.
+- Tickets : **quelques-uns, pas d'épics**, ordonnés et priorisés — **la landing page en premier** : on ne traitera pas toutes les issues pendant la démo, il faut un résultat visible rapidement (la mesure en dernier). Découpe pour que le premier ticket soit **livrable seul** (structure + contenus statiques ; l'interactif dans les tickets suivants).
+- **Un ticket = une PR, strictement** : ne traite que le ticket validé, le reste vit au board. Tiens le board à jour : **In Progress** quand tu démarres un ticket, **Done** quand sa PR est ouverte.
+- Tests : un **E2E léger** du parcours principal suffit. En navigateur, cliquer les **labels** (`fr-label`) — le DSFR masque les inputs, qui interceptent mal les clics.
 - **Accessibilité RGAA** et **DSFR** non négociables.
 
 > Le reste de l'ambition produit (API météo temps réel, annuaire géolocalisé des lieux frais, espace relais/aidants, mesure serveur) reste **hors périmètre** de l'atelier — à mentionner, pas à construire.

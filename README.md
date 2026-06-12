@@ -18,23 +18,23 @@ Pré-requis du poste opérateur → [GETTING-STARTED.md](GETTING-STARTED.md).
 | T40 → T90 | Maquette déposée dans `maquette/` → landing alignée, **PR** ouverte | Revue du board, des tickets, du diff |
 | T90 → T120 | CHANGELOG + doc | Récap : ce qui a été délégué, comment le reproduire |
 
-Le minutage est indicatif ; la règle, elle, ne l'est pas : **rien n'attend rien** — à une exception près, la maquette attend la spec. C'est pourquoi `SPEC.md` sort en premier, vite.
+Le minutage est indicatif ; la règle, elle, ne l'est pas : **la préparation n'attend rien, la publication attend le « go »** de chaque étape. Seule dépendance dure : la maquette attend la spec — c'est pourquoi `SPEC.md` sort en premier, vite.
 
 ## Prompt kickoff
 
 Point de départ, à co-écrire/commenter avec le groupe — **montrer le geste, c'est le cœur de l'atelier**. (Remplacer `<board>` par le nom de ton board Projects.)
 
 ```text
-Lis recherche_utilisateur/ et déroule toute la chaîne de l'atelier (cf. CLAUDE.md), en parallélisant au maximum :
+Lis recherche_utilisateur/ et déroule la chaîne de l'atelier (cf. CLAUDE.md) en mode démo guidée :
 
-1. En priorité : spec produit concise → SPEC.md — annonce-la dès qu'elle est prête, le groupe l'attend pour démarrer la maquette sur Claude Design.
-2. Puis en parallèle : tickets priorisés du MVP → issues GitHub + board Projects « <board> » (via gh), et socle Vite vanilla + pnpm + DSFR de base (markup via le MCP dsfr).
-3. Implémente le premier ticket — la landing — puis ouvre une PR via gh.
-4. CHANGELOG + mise à jour du README.
+— Prépare en tâche de fond tout ce qui peut l'être (spec, tickets, socle, code) : la préparation ne s'arrête jamais.
+— Mais marque un arrêt à chaque étape du fil rouge : présente le résultat en quelques lignes et attends mon « go » avant toute action visible (post des tickets, PR…) et avant l'étape suivante.
 
-La maquette se fait pendant ce temps sur Claude Design : ne bloque pas dessus, je la déposerai dans maquette/ et tu aligneras la landing dessus. Annonce chaque étape franchie.
+Fil rouge : 1. SPEC.md (priorité — le groupe l'attend pour la maquette) · 2. tickets → issues + board « <board> » · 3. socle Vite vanilla + pnpm + DSFR (MCP dsfr) · 4. landing = strictement le premier ticket → PR · 5. CHANGELOG + README.
+
+Tiens le board à jour (In Progress / Done). La maquette se fait pendant ce temps sur Claude Design ; je la déposerai dans maquette/ et tu aligneras la landing dessus.
 ```
 
-Quand la maquette Claude Design est prête : copier ses fichiers dans `maquette/` et dire à Claude « maquette déposée dans `maquette/`, aligne la landing dessus ».
+Quand la maquette Claude Design est prête : copier ses fichiers dans `maquette/` et dire à Claude « maquette déposée dans `maquette/`, aligne la landing dessus ». La maquette exportée est souvent du **React** : elle sert de **référence visuelle et structurelle** — le code, lui, reste vanilla DSFR (cf. CLAUDE.md).
 
 Les artefacts se créent dans le repo au fil de la démo : `SPEC.md`, `maquette/`, le code, `CHANGELOG.md`.
