@@ -15,7 +15,7 @@ Guide de la personne qui opère Claude Code pendant la démo (la « GO »). La d
 
 ### GitHub & outillage
 
-- [ ] **Forker** le repo puis cloner **ton fork** — un board GitHub Projects est lié au compte, pas au repo : chacun opère sur le sien.
+- [ ] **Forker** le repo (le repo source doit être public) puis cloner **ton fork** — un board GitHub Projects est lié au compte, pas au repo : chacun opère sur le sien.
 - [ ] **Activer les Issues** sur le fork (désactivées par défaut) : `gh repo edit <ton-handle>/JIA-atelier --enable-issues`.
 - [ ] `gh` authentifié avec le scope **`project`** : `gh auth refresh -s project`.
 - [ ] Créer un **board GitHub Projects** vide, nom unique (ex. `TerriTest — <ton-handle>`).
@@ -27,7 +27,7 @@ Guide de la personne qui opère Claude Code pendant la démo (la « GO »). La d
 | Quand | Claude Code (poste GO) | Le groupe, en parallèle |
 |---|---|---|
 | T0 | Coller le **prompt kickoff** ↓ | Présenter l'intrant terrain |
-| T0 → T30 | Spec dans le README, tickets postés sur le board, socle Vite + DSFR | **Maquette sur Claude Design** à partir de la spec |
+| T0 → T30 | Spec dans `SPEC.md`, tickets postés sur le board, socle Vite + DSFR | **Maquette sur Claude Design** à partir de `SPEC.md` |
 | T30 → T90 | Maquette déposée dans `maquette/` → landing alignée, **PR** ouverte | Revue du board, des tickets, du diff |
 | T90 → T120 | CHANGELOG + doc | Récap : ce qui a été délégué, comment le reproduire |
 
@@ -35,16 +35,16 @@ Le minutage est indicatif ; la règle, elle, ne l'est pas : **rien n'attend rien
 
 ## 3. Prompt kickoff
 
-À coller tel quel au démarrage (remplacer `<board>` par le nom de ton board Projects) :
+À coller tel quel au démarrage (remplacer `<board>` par le nom de ton board Projects). C'est un point de départ : co-écris/commente-le avec le groupe — **montrer le geste, c'est le cœur de l'atelier**.
 
 ```text
 Lis investigation-terrain-territest.md et déroule toute la chaîne de l'atelier (cf. CLAUDE.md), en parallélisant au maximum :
 
-1. Spec produit concise → remplace le contenu de README.md.
+1. Spec produit concise → SPEC.md.
 2. Tickets priorisés du MVP → issues GitHub + board Projects « <board> » (via gh).
 3. Sans attendre : socle Vite vanilla + pnpm + DSFR de base (markup via le MCP dsfr).
 4. Implémente la landing (simulateur d'éligibilité côté client, deux portes, capture email), puis ouvre une PR via gh.
-5. CHANGELOG + doc.
+5. CHANGELOG + mise à jour du README.
 
 La maquette se fait en parallèle sur Claude Design : ne bloque pas dessus, je la déposerai dans maquette/ et tu aligneras la landing dessus. Annonce chaque étape franchie.
 ```
