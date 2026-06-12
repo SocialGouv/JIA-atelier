@@ -5,7 +5,7 @@ Mode d'emploi de la **GO** (la personne qui opère Claude Code pour le groupe).
 
 ## L'atelier en deux mots
 
-À partir du seul intrant `investigation-terrain-territest.md`, on déroule en live avec Claude :
+À partir de l'intrant `recherche_utilisateur/`, on déroule en live avec Claude :
 **retours terrain → spec → maquette → board → tâches → code (PR) → doc.**
 But : que les participants **comprennent comment déléguer une partie de leur métier à l'IA** et sachent le refaire. Le prompt reste visible et expliqué à chaque étape — c'est ça, la leçon.
 
@@ -29,7 +29,7 @@ But : que les participants **comprennent comment déléguer une partie de leur m
 
 Les prompts sont des points de départ : co-écris-les avec le groupe, montre le geste.
 
-1. **Spec** — « Lis `investigation-terrain-territest.md` et rédige la spec produit dans `README.md` : vision, problème (verbatims), objectifs, features, KPI, périmètre client-only. Va à l'essentiel. »
+1. **Spec** — « Lis `recherche_utilisateur/` et rédige la spec produit dans `README.md` : vision, problème (verbatims), objectifs, features, KPI, périmètre client-only. Va à l'essentiel. »
 2. **Maquette** — dans **Claude Design** : générer la maquette DSFR depuis la spec, puis **copier les fichiers dans `maquette/`**.
 3. **Board** — « Crée dans mon board GitHub Projects les tickets des features, **ordonnés et priorisés** (le socle d'abord, la mesure en dernier). Reste simple : une page = quelques tickets, **pas d'épics**. »
 4. **Tâches techniques** — « Décline en tâches concrètes : la landing + un test E2E du parcours simulateur. »
