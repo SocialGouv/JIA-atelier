@@ -1,49 +1,40 @@
-# Guide GO — atelier JIA  (⚠️ à supprimer avant de lancer l'atelier)
+# JIA-atelier — démo
 
-Mode d'emploi de la **GO** (la personne qui opère Claude Code pour le groupe).
-**Supprime ce `README.md` avant de commencer** : l'étape 1 écrira la spec produit à sa place.
+Atelier de développement assisté par IA. À partir du seul intrant terrain — [recherche_utilisateur/](recherche_utilisateur/) (recherche utilisateur sur le site « Fortes Chaleurs & Canicules » : 17 entretiens, 347 réponses questionnaire, 6 tests, benchmark 4 pays) — dérouler en live avec Claude, en **2h max**, la chaîne complète :
 
-## L'atelier en deux mots
+**retours terrain → spec produit (`SPEC.md`) → maquette (Claude Design) → board (GitHub Projects) → code (PR) → doc & changelog.**
 
-À partir de l'intrant `recherche_utilisateur/`, on déroule en live avec Claude :
-**retours terrain → spec → maquette → board → tâches → code (PR) → doc.**
-But : que les participants **comprennent comment déléguer une partie de leur métier à l'IA** et sachent le refaire. Le prompt reste visible et expliqué à chaque étape — c'est ça, la leçon.
+Le but n'est pas de livrer un produit parfait, mais que chacun **comprenne comment déléguer une partie de son métier à l'IA** et sache le reproduire — les prompts restent visibles et expliqués à chaque étape.
 
-## Pré-requis (poste GO)
+Pré-requis du poste opérateur → [GETTING-STARTED.md](GETTING-STARTED.md).
 
-- Claude Code connecté, lancé en **mode AUTO** (auto-accept) pour ne pas être coupé par les permissions.
-- **`gh`** authentifié avec le scope **`project`** : `gh auth refresh -s project`.
-- **pnpm** installé.
-- Le MCP `dsfr` se charge seul via `.mcp.json` (`npx dsfr-mcp`).
+## Déroulé (2h, parallélisé)
 
-## Setup avant l'atelier (≈ 5 min)
+| Quand | Claude Code (poste opérateur) | Le groupe, en parallèle |
+|---|---|---|
+| T0 | Coller le **prompt kickoff** ↓ | Présenter l'intrant terrain |
+| T0 → T10 | **`SPEC.md` en priorité** — c'est le point de synchro | Lire la spec dès qu'elle tombe |
+| T10 → T40 | Tickets postés sur le board, socle Vite + DSFR | **Maquette sur Claude Design** à partir de `SPEC.md` |
+| T40 → T90 | Maquette déposée dans `maquette/` → landing alignée, **PR** ouverte | Revue du board, des tickets, du diff |
+| T90 → T120 | CHANGELOG + doc | Récap : ce qui a été délégué, comment le reproduire |
 
-1. **Forker** ce repo sur ton compte (le repo source doit être public).
-2. **Cloner** ton fork.
-3. **Activer les Issues** sur ton fork — désactivées par défaut sur un fork :
-   `gh repo edit <ton-compte>/JIA-atelier --enable-issues`.
-4. **Créer ton board** GitHub Projects, **nom unique** (ex. `TerriTest — <ton-handle>`) — un Project est lié au compte, pas au repo, donc chacun crée le sien.
-5. **Supprimer ce `README.md`**.
+Le minutage est indicatif ; la règle, elle, ne l'est pas : **la préparation n'attend rien, la publication attend le « go »** de chaque étape. Seule dépendance dure : la maquette attend la spec — c'est pourquoi `SPEC.md` sort en premier, vite.
 
-## Déroulé — les 6 étapes
+## Prompt kickoff
 
-Les prompts sont des points de départ : co-écris-les avec le groupe, montre le geste.
+Point de départ, à co-écrire/commenter avec le groupe — **montrer le geste, c'est le cœur de l'atelier**. (Remplacer `<board>` par le nom de ton board Projects.)
 
-1. **Spec** — « Lis `recherche_utilisateur/` et rédige la spec produit dans `README.md` : vision, problème (verbatims), objectifs, features, KPI, périmètre client-only. Va à l'essentiel. »
-2. **Maquette** — dans **Claude Design** : générer la maquette DSFR depuis la spec, puis **copier les fichiers dans `maquette/`**.
-3. **Board** — « Crée dans mon board GitHub Projects les tickets des features, **ordonnés et priorisés** (le socle d'abord, la mesure en dernier). Reste simple : une page = quelques tickets, **pas d'épics**. »
-4. **Tâches techniques** — « Décline en tâches concrètes : la landing + un test E2E du parcours simulateur. »
-5. **Code** — « Implémente le ticket [n] en **Vite vanilla + DSFR de base** (markup via le MCP `dsfr`), d'après la maquette. Pas de re-planification. Puis ouvre une PR via `gh`. »
-6. **Doc** — « Lis `gh pr diff`, rédige le CHANGELOG et mets à jour le README. »
+```text
+Lis recherche_utilisateur/ et déroule la chaîne de l'atelier (cf. CLAUDE.md) en mode démo guidée :
 
-## Règles
+— Prépare en tâche de fond tout ce qui peut l'être (spec, tickets, socle, code) : la préparation ne s'arrête jamais.
+— Mais marque un arrêt à chaque étape du fil rouge : présente le résultat en quelques lignes et attends mon « go » avant toute action visible (post des tickets, PR…) et avant l'étape suivante.
 
-- **Pas de plan mode**, pas de « je fais un plan d'abord » : on va droit à l'artefact.
-- Le **prompt reste visible** : les participants doivent voir le geste pour le reproduire.
-- Stack : **Vite vanilla + pnpm + DSFR de base** (markup via MCP `dsfr`), **pas de react-dsfr**, landing **100 % client**.
+Fil rouge : 1. SPEC.md (priorité — le groupe l'attend pour la maquette) · 2. tickets → issues + board « <board> » · 3. socle Vite vanilla + pnpm + DSFR (MCP dsfr) · 4. landing = strictement le premier ticket → PR · 5. CHANGELOG + README.
 
-## Pièges connus (repérés en répétition)
+Tiens le board à jour (In Progress / Done). La maquette se fait pendant ce temps sur Claude Design ; je la déposerai dans maquette/ et tu aligneras la landing dessus.
+```
 
-- Fork → **Issues désactivées** par défaut → les activer.
-- **Projects liés au compte**, pas au repo → créer son board, nom unique.
-- `gh` doit avoir le scope **`project`**.
+Quand la maquette Claude Design est prête : copier ses fichiers dans `maquette/` et dire à Claude « maquette déposée dans `maquette/`, aligne la landing dessus ». La maquette exportée est souvent du **React** : elle sert de **référence visuelle et structurelle** — le code, lui, reste vanilla DSFR (cf. CLAUDE.md).
+
+Les artefacts se créent dans le repo au fil de la démo : `SPEC.md`, `maquette/`, le code, `CHANGELOG.md`.
